@@ -1,0 +1,37 @@
+﻿/*
+ * HmDeepSeekWeb v 1.0.0.4
+ *
+ * Copyright (c) 2025 Akitsugu Komiyama
+ * under the MIT License
+ */
+
+
+hidemaruversion "9.39.99";
+
+jsmode  @"WebView2\HmDeepSeekWeb";
+
+js {
+
+// ------------- 会話エンジンの設定項目 -------------
+
+const baseUrl = "https://chat.deepseek.com//";
+
+const renderPaneCustomParam = {
+    place: "rightside",            // leftside | rightside | upside | downside
+    size: 450,                     // 左や右の配置の時は、横幅のこと。上や下の配置の時は縦幅のこと。
+};
+
+const isOneAtTimeAIRenderPane = 1; // AI関連のレンダリング枠は(他の種類のAIも含め)１つだけにする。(複数起動しそうになると、前のものが閉じる）
+
+// --------------------------------------------------
+
+const renderPaneTargetName = "HmDeepSeekWeb";
+    
+const currentMacroDirectory = currentmacrodirectory();
+
+const script = hidemaru.loadTextFile(currentMacroDirectory + "\\HmConvAIWeb.js");
+eval(script);
+
+doMain();
+
+}
