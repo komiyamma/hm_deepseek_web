@@ -32,6 +32,10 @@ const currentMacroDirectory = currentmacrodirectory();
 const script = hidemaru.loadTextFile(currentMacroDirectory + "\\HmConvAIWeb.js");
 eval(script);
 
+function useInputTransfer() {
+    return true;
+}
+
 doMain();
 
 }
