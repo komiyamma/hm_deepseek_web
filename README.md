@@ -6,7 +6,7 @@
 
 DeepSeek の Web版 を秀丸から直接利用する。超簡易版だがAPI経由ではないので、結果を自動処理できない。
 
-https://秀丸マクロ.net/?page=nobu_tool_hm_ms_copilot_web
+https://秀丸マクロ.net/?page=nobu_tool_hm_deepseek_web
 
 ## ClipboardHistMngr.exe のソース
 

@@ -16,7 +16,7 @@ js {
 
 // ------------- 会話エンジンの設定項目 -------------
 
-const baseUrl = "https://chat.deepseek.com//";
+const baseUrl = "https://chat.deepseek.com/";
 
 const renderPaneCustomParam = {
     place: "rightside",            // leftside | rightside | upside | downside
