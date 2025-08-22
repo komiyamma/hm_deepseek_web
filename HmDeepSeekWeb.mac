@@ -38,6 +38,16 @@ function useInputTransfer() {
     return true;
 }
 
+function onPrevKeySendDecorator() {
+    
+    try {
+        // Copilotのインプット枠へのフォーカス。手堅いが将来変更になるかも。これがなくても一応はuseInputTransferだけでフォーカスするハズ
+        browserpanecommand({target:"_each", focusinputfield:'#chat-input'});
+    } catch(e) {
+    }
+}
+
+
 doMain();
 
 }
