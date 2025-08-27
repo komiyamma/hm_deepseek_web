@@ -1,5 +1,5 @@
 ﻿/*
- * HmDeepSeekWeb v 1.1.1.5
+ * HmDeepSeekWeb v 1.1.1.9
  *
  * Copyright (c) 2025 Akitsugu Komiyama
  * under the MIT License
@@ -38,12 +38,14 @@ function useInputTransfer() {
     return true;
 }
 
-function onPrevKeySendDecorator() {
-    
-    try {
-        // Copilotのインプット枠へのフォーカス。手堅いが将来変更になるかも。これがなくても一応はuseInputTransferだけでフォーカスするハズ
-        browserpanecommand({target:"_each", focusinputfield:'#chat-input'});
-    } catch(e) {
+if (isVersionAtLeast(hidemaruversion(), "9.50.04")) {
+    function onPrevKeySendDecorator() {
+        
+        try {
+            // Copilotのインプット枠へのフォーカス。手堅いが将来変更になるかも。これがなくても一応はuseInputTransferだけでフォーカスするハズ
+            browserpanecommand({target:"_each", focusinputfield:'#chat-input'});
+        } catch(e) {
+        }
     }
 }
 
