@@ -1,12 +1,12 @@
 ﻿/*
- * HmDeepSeekWeb v 2.0.0.1
+ * HmDeepSeekWeb v 2.0.2.1
  *
- * Copyright (c) 2025 Akitsugu Komiyama
+ * Copyright (c) 2025-2026 Akitsugu Komiyama
  * under the MIT License
  */
 
 
-hidemaruversion "9.39.99";
+hidemaruversion "9.50.04";
 
 setcompatiblemode 0x08000000;
 
@@ -28,24 +28,18 @@ const isOneAtTimeAIRenderPane = 1; // AI関連のレンダリング枠は(他の
 // --------------------------------------------------
 
 const renderPaneTargetName = "HmDeepSeekWeb";
-    
+
 const currentMacroDirectory = currentmacrodirectory();
 
 const script = hidemaru.loadTextFile(currentMacroDirectory + "\\HmConvAIWeb.js");
 eval(script);
 
-function useInputTransfer() {
-    return true;
-}
+function onPrevKeySendDecorator() {
 
-if (isVersionAtLeast(hidemaruversion(), "9.50.04")) {
-    function onPrevKeySendDecorator() {
-        
-        try {
-            // Copilotのインプット枠へのフォーカス。手堅いが将来変更になるかも。これがなくても一応はuseInputTransferだけでフォーカスするハズ
-            browserpanecommand({target:"_each", focusinputfield:'#chat-input'});
-        } catch(e) {
-        }
+    try {
+        // Copilotのインプット枠へのフォーカス。手堅いが将来変更になるかも。これがなくても一応はuseInputTransferだけでフォーカスするハズ
+        browserpanecommand({target:"_each", focusinputfield:'#chat-input'});
+    } catch(e) {
     }
 }
 
